@@ -18,6 +18,9 @@ import static org.junit.Assert.*;
  */
 public class ClipTest {
     
+    private static Clip clip1 = new Clip();
+    private static Clip clip2 = new Clip();
+    
     public ClipTest() {
     }
     
@@ -43,6 +46,22 @@ public class ClipTest {
     @Test
     public void testSetTitleToEmptyStringKeepsPreviousValue()
     {
+        System.out.println("testSetTitleToEmptyStringKeepsPreviousValue");
+        
+        String title = "Sub Clip 1";
+
+        clip1.setTitle(title);
+        
+        clip1.setTitle(null); // test for null title
+        assertEquals(title, clip1.getTitle());
+        
+        clip1.setTitle(""); // test for title with empty String
+        assertEquals(title, clip1.getTitle());
+        
+
+        String notEmptyTitle = "New Title for Sub Clip 1";
+        clip1.setTitle(notEmptyTitle); // test for actual title which will be changed
+        assertEquals(notEmptyTitle, clip1.getTitle());
     }
 
     @Test
