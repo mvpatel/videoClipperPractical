@@ -179,6 +179,17 @@ public class ClipTest {
     @Test
     public void testSetEndToNegativeNumberKeepsPreviousValue() 
     {
+                // there is a problem on method name that's why 1 is added in the end
+        System.out.println("testSetEndToNegativeNumberKeepsPreviousValue");
+        
+        int endValueBefore = clip1.getEnd();
+        
+        
+        clip1.setEnd(-10); // set end value in minus which is also smaller than start value
+        assertEquals(endValueBefore, clip1.getEnd());
+        
+        clip1.setEnd(0); // set end value equal to start value
+        assertEquals(endValueBefore, clip1.getEnd());
     }
     
     @Test
