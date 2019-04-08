@@ -67,6 +67,30 @@ public class ClipTest {
     @Test
     public void testSetEndBeforeStartKeepsPreviousValue()
     {
+        System.out.println("testSetEndBeforeStartKeepsPreviousValue");
+        
+        clip1.setStart(5);
+        clip1.setEnd(20);
+        
+        int endValueBefore = clip1.getEnd();
+        
+        clip1.setEnd(4); // set end value smaller than start value
+        assertEquals(endValueBefore, clip1.getEnd());
+        
+        clip1.setEnd(0); // set end value 0 and test which is also smaller than start value
+        assertEquals(endValueBefore, clip1.getEnd());
+        
+        clip1.setEnd(-10); // set end value in minus which is also smaller than start value
+        assertEquals(endValueBefore, clip1.getEnd());
+        
+        clip1.setEnd(5); // set end value equal to start value
+        assertEquals(5, clip1.getEnd());
+        
+        clip1.setEnd(20); // set end value equal to current end value
+        assertEquals(20, clip1.getEnd());
+        
+        clip1.setEnd(40); // set end value larger than current end value
+        assertEquals(40, clip1.getEnd());
     }
 
     @Test
