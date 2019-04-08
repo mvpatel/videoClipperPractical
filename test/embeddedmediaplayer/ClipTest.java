@@ -18,8 +18,12 @@ import static org.junit.Assert.*;
  */
 public class ClipTest {
     
-    private static Clip clip1 = new Clip();
-    private static Clip clip2 = new Clip();
+    private static Clip clip1;
+    private static Clip clip2;
+    
+    String commonTitle = "Clip Title";
+    int commonClipStart = 5; // common start for this test
+    int commonClipEnd = 20; // common end for this test
     
     public ClipTest() {
     }
@@ -34,6 +38,18 @@ public class ClipTest {
     
     @Before
     public void setUp() {
+        clip1 = new Clip();
+        clip2 = new Clip();
+        
+        // setting common values for properties of clip1 
+        clip1.setTitle(commonTitle);
+        clip1.setStart(commonClipStart);
+        clip1.setEnd(commonClipEnd);
+        
+        // setting common values for properties of clip2 which excatly same as clip1
+        clip2.setTitle(commonTitle);
+        clip2.setStart(commonClipStart);
+        clip2.setEnd(commonClipEnd);
     }
     
     @After
@@ -65,9 +81,10 @@ public class ClipTest {
     }
 
     @Test
-    public void testSetEndBeforeStartKeepsPreviousValue()
+    public void testSetEndBeforeStartKeepsPreviousValue1()
     {
-        System.out.println("testSetEndBeforeStartKeepsPreviousValue");
+        // there is a problem on method name that's why 1 is added in the end
+        System.out.println("testSetEndBeforeStartKeepsPreviousValue1");
         
         clip1.setStart(5);
         clip1.setEnd(20);
@@ -96,7 +113,7 @@ public class ClipTest {
     @Test
     public void testEqualsOnEqualClips() 
     {
-        System.out.println("testSetEndBeforeStartKeepsPreviousValue");
+        System.out.println("testEqualsOnEqualClips");
 
         String commonTitle = "Clip Title"; // common title for this test
         int commonClipStart = 5; // common start for this test
@@ -115,6 +132,31 @@ public class ClipTest {
         // test for exectly same values for both clips
         assertEquals(true, clip1.equals(clip2));
         
+        clip1.setTitle("");
+        clip2.setTitle("");
+        assertEquals(true, clip1.equals(clip2));
+        
+        clip1.setStart(0);
+        clip2.setStart(0);
+        assertEquals(true, clip1.equals(clip2));
+        
+        
+        clip1.setEnd(0);
+        clip2.setEnd(0);
+        assertEquals(true, clip1.equals(clip2));
+        
+                
+        // make a clip2 null and test
+        clip2 = null;
+        assertEquals(false, clip1.equals(clip2));
+
+    }
+    
+    @Test
+    public void testEqualsOnNonEqualClips() 
+    {
+        System.out.println("testEqualsOnNonEqualClips");
+        
         // change the title in clip2 and test
         clip2.setTitle("Clip Title new");
         assertEquals(false, clip1.equals(clip2));
@@ -132,11 +174,6 @@ public class ClipTest {
         // make a clip2 null and test
         clip2 = null;
         assertEquals(false, clip1.equals(clip2));
-    }
-    
-    @Test
-    public void testEqualsOnNonEqualClips() 
-    {
     }
     
     @Test
