@@ -121,9 +121,19 @@ public void loadCSVLine(String s)
     
 }
 
-
-
 public String getUpperCase(String s) {
     return s.toUpperCase();
+}
+
+public int getTimeInSecondsBack(int currentTimeInSeconds,int secondToReduce)
+{
+    int timeInSeconds = currentTimeInSeconds - secondToReduce;
+    
+    if (timeInSeconds < 0) {
+        return currentTimeInSeconds;
+    }
+    else {
+        return timeInSeconds;
+    }
 }
 }

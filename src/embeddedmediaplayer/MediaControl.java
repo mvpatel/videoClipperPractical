@@ -342,6 +342,11 @@ public class MediaControl extends VBox {
         btnNudgeSelectedStartBack.setStyle("-fx-max-width:infinity");
         btnNudgeSelectedStartBack.setOnAction(new EventHandler<ActionEvent>() {
             public void handle(ActionEvent e) {
+                Clip p = table.getSelectionModel().getSelectedItem();
+                int start = p.getStart();
+                if (p==null || start == 0) return;
+                p.setStart(p.getTimeInSecondsBack(start, 1));
+                doTableRefresh(table);
             }
         });
         final Button btnNudgeSelectedStartForward = new Button(">>");
@@ -505,6 +510,8 @@ public class MediaControl extends VBox {
           //ADDITIONAL FUNCTIONALITY
           
             gridBox.add(btnAllCapsSelected,8,1,1,1);
+            gridBox.add(btnNudgeSelectedStartBack,9,1,1,1);
+
 
           
           //gridBox.add(btnNudgeBack,6,1,1,1);

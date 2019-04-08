@@ -223,6 +223,24 @@ public class ClipTest {
 
     }
     
+    @Test
+    public void testGetTimeInSecondsBack() {
+    
+        int currentSeconds = 50;
+        int minusFromCurrentSeconds = 1;
+        
+        assertEquals(currentSeconds - minusFromCurrentSeconds, clip1.getTimeInSecondsBack(currentSeconds, minusFromCurrentSeconds));
+        
+        minusFromCurrentSeconds = 0;
+        assertEquals(currentSeconds, clip1.getTimeInSecondsBack(currentSeconds, minusFromCurrentSeconds));
+        
+        minusFromCurrentSeconds = 51;
+        assertEquals(currentSeconds, clip1.getTimeInSecondsBack(currentSeconds, minusFromCurrentSeconds));
+        
+        minusFromCurrentSeconds = 100;
+        assertEquals(currentSeconds, clip1.getTimeInSecondsBack(currentSeconds, minusFromCurrentSeconds));
+    }
+    
     
     
 }
