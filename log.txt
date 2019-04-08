@@ -1,0 +1,53 @@
+commit 070546bb927e3f83c4d89b5e0ca40d0e2b227df8
+Author: Saiyed <ss18aef@herts.ac.uk>
+Date:   Mon Apr 8 14:17:28 2019 +0100
+
+    testGetTimeInSecondsBack and getTimeInSecondsBack are created
+
+commit 6935133816d3d9342ef442b61d6432f1e4b57152
+Author: Saiyed <ss18aef@herts.ac.uk>
+Date:   Mon Apr 8 13:59:11 2019 +0100
+
+    testGetUpperCase and getUpperCase is created and tested
+
+commit ac6b8bef6bff707964cf55a189cd6e0fa115572f
+Author: Saiyed <ss18aef@herts.ac.uk>
+Date:   Mon Apr 8 13:39:42 2019 +0100
+
+    testSetStartToValidPositiveNumber is created
+
+commit cd4ed79d336530137e72130f0a0f465e21c1dace
+Author: Saiyed <ss18aef@herts.ac.uk>
+Date:   Mon Apr 8 13:34:42 2019 +0100
+
+    testSetEndToNegativeNumberKeepsPreviousValue is done
+
+commit f6d3dfc40aaa6361dbed763f660d677a81b6793a
+Author: Saiyed <ss18aef@herts.ac.uk>
+Date:   Mon Apr 8 13:30:26 2019 +0100
+
+    testEqualsOnNonEqualClips
+
+commit 9f1ba189fb03a2e8dca46c28b3ea97ea137f5704
+Author: Saiyed <ss18aef@herts.ac.uk>
+Date:   Mon Apr 8 13:11:41 2019 +0100
+
+    testEqualsOnEqualClips is created
+
+commit 78b8dbdfa5b37ca02af46cb68e9e2ceeddac4c6f
+Author: Saiyed <ss18aef@herts.ac.uk>
+Date:   Mon Apr 8 13:10:28 2019 +0100
+
+    testSetEndBeforeStartKeepsPreviousValue is created
+
+commit 400182fe789b8d2f5ecfda653aba5a771e6bea65
+Author: Saiyed <ss18aef@herts.ac.uk>
+Date:   Mon Apr 8 13:08:48 2019 +0100
+
+    testSetTitleToEmptyStringKeepsPreviousValue is added
+
+commit 3f2cffabaec42f907b8dd6fd7931fa6518fa37ee
+Author: Saiyed <ss18aef@herts.ac.uk>
+Date:   Mon Apr 8 13:06:41 2019 +0100
+
+    First commit with no chnages

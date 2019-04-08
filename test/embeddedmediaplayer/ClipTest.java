@@ -81,10 +81,9 @@ public class ClipTest {
     }
 
     @Test
-    public void testSetEndBeforeStartKeepsPreviousValue1()
+    public void testSetEndBeforeStartKeepsPreviousValue()
     {
-        // there is a problem on method name that's why 1 is added in the end
-        System.out.println("testSetEndBeforeStartKeepsPreviousValue1");
+        System.out.println("testSetEndBeforeStartKeepsPreviousValue");
         
         int endValueBefore = clip1.getEnd();
         
@@ -97,6 +96,7 @@ public class ClipTest {
         clip1.setEnd(-10); // set end value in minus which is also smaller than start value
         assertEquals(endValueBefore, clip1.getEnd());
         
+        // following added extra tests for good coverage
         clip1.setEnd(5); // set end value equal to start value
         assertEquals(5, clip1.getEnd());
         
@@ -111,20 +111,6 @@ public class ClipTest {
     public void testEqualsOnEqualClips() 
     {
         System.out.println("testEqualsOnEqualClips");
-
-        String commonTitle = "Clip Title"; // common title for this test
-        int commonClipStart = 5; // common start for this test
-        int commonClipEnd = 20; // common end for this test
-        
-        // setting common values for properties of clip1 
-        clip1.setTitle(commonTitle);
-        clip1.setStart(commonClipStart);
-        clip1.setEnd(commonClipEnd);
-        
-        // setting common values for properties of clip2 which excatly same as clip1
-        clip2.setTitle(commonTitle);
-        clip2.setStart(commonClipStart);
-        clip2.setEnd(commonClipEnd);
         
         // test for exectly same values for both clips
         assertEquals(true, clip1.equals(clip2));
@@ -182,10 +168,10 @@ public class ClipTest {
         int endValueBefore = clip1.getEnd();
         
         
-        clip1.setEnd(-10); // set end value in minus which is also smaller than start value
+        clip1.setEnd(-10);
         assertEquals(endValueBefore, clip1.getEnd());
         
-        clip1.setEnd(0); // set end value equal to start value
+        clip1.setEnd(0);
         assertEquals(endValueBefore, clip1.getEnd());
     }
     
@@ -215,6 +201,9 @@ public class ClipTest {
     @Test
     public void testGetUpperCase() 
     {
+        
+    System.out.println("testGetUpperCase");
+    
       String lowerCaseString = "Clip 1";
       assertEquals(lowerCaseString.toUpperCase(), clip1.getUpperCase(lowerCaseString));
       
@@ -226,6 +215,8 @@ public class ClipTest {
     @Test
     public void testGetTimeInSecondsBack() {
     
+        System.out.println("testGetTimeInSecondsBack");
+        
         int currentSeconds = 50;
         int minusFromCurrentSeconds = 1;
         
