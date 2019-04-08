@@ -96,6 +96,42 @@ public class ClipTest {
     @Test
     public void testEqualsOnEqualClips() 
     {
+        System.out.println("testSetEndBeforeStartKeepsPreviousValue");
+
+        String commonTitle = "Clip Title"; // common title for this test
+        int commonClipStart = 5; // common start for this test
+        int commonClipEnd = 20; // common end for this test
+        
+        // setting common values for properties of clip1 
+        clip1.setTitle(commonTitle);
+        clip1.setStart(commonClipStart);
+        clip1.setEnd(commonClipEnd);
+        
+        // setting common values for properties of clip2 which excatly same as clip1
+        clip2.setTitle(commonTitle);
+        clip2.setStart(commonClipStart);
+        clip2.setEnd(commonClipEnd);
+        
+        // test for exectly same values for both clips
+        assertEquals(true, clip1.equals(clip2));
+        
+        // change the title in clip2 and test
+        clip2.setTitle("Clip Title new");
+        assertEquals(false, clip1.equals(clip2));
+        
+        // change title back to common value and change the start for test
+        clip2.setTitle(commonTitle);
+        clip2.setStart(10);
+        assertEquals(false, clip1.equals(clip2));
+
+        // change start back to common value and change end value for test
+        clip2.setStart(commonClipStart);
+        clip2.setEnd(30);
+        assertEquals(false, clip1.equals(clip2));
+        
+        // make a clip2 null and test
+        clip2 = null;
+        assertEquals(false, clip1.equals(clip2));
     }
     
     @Test
