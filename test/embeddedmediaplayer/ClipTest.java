@@ -86,9 +86,6 @@ public class ClipTest {
         // there is a problem on method name that's why 1 is added in the end
         System.out.println("testSetEndBeforeStartKeepsPreviousValue1");
         
-        clip1.setStart(5);
-        clip1.setEnd(20);
-        
         int endValueBefore = clip1.getEnd();
         
         clip1.setEnd(4); // set end value smaller than start value
@@ -179,7 +176,7 @@ public class ClipTest {
     @Test
     public void testSetEndToNegativeNumberKeepsPreviousValue() 
     {
-                // there is a problem on method name that's why 1 is added in the end
+        // there is a problem on method name that's why 1 is added in the end
         System.out.println("testSetEndToNegativeNumberKeepsPreviousValue");
         
         int endValueBefore = clip1.getEnd();
@@ -194,7 +191,26 @@ public class ClipTest {
     
     @Test
     public void testSetStartToValidPositiveNumber() 
-    {    
+    { 
+        // there is a problem on method name that's why 1 is added in the end
+        System.out.println("testSetEndBeforeStartKeepsPreviousValue1");
+        
+        int startValueBefore = clip1.getStart();
+        
+                
+        clip1.setStart(40);
+        assertEquals(startValueBefore, clip1.getStart());
+        
+        clip1.setStart(4);
+        assertEquals(4, clip1.getStart());
+        
+        clip1.setStart(0);
+        assertEquals(0, clip1.getStart());
+       
+        
+        clip1.setStart(20);
+        assertEquals(20, clip1.getStart());
+
     }
     
     
