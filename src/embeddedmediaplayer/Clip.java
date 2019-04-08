@@ -120,4 +120,10 @@ public void loadCSVLine(String s)
     end.set(Integer.parseInt(csvLine[1]));
     
 }
+
+
+
+public String getUpperCase(String s) {
+    return s.toUpperCase();
+}
 }

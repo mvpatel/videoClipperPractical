@@ -330,6 +330,9 @@ public class MediaControl extends VBox {
         btnAllCapsSelected.setStyle("-fx-max-width:infinity");
         btnAllCapsSelected.setOnAction(new EventHandler<ActionEvent>() {
             public void handle(ActionEvent e) {
+                Clip p = table.getSelectionModel().getSelectedItem();
+                p.setTitle(p.getUpperCase(p.getTitle()));
+                doTableRefresh(table);
             }
         });
         
@@ -500,6 +503,9 @@ public class MediaControl extends VBox {
           
           
           //ADDITIONAL FUNCTIONALITY
+          
+            gridBox.add(btnAllCapsSelected,8,1,1,1);
+
           
           //gridBox.add(btnNudgeBack,6,1,1,1);
           //gridBox.add(btnNudgeForward,6,1,1,1);

@@ -212,6 +212,16 @@ public class ClipTest {
         assertEquals(20, clip1.getStart());
 
     }
+    @Test
+    public void testGetUpperCase() 
+    {
+      String lowerCaseString = "Clip 1";
+      assertEquals(lowerCaseString.toUpperCase(), clip1.getUpperCase(lowerCaseString));
+      
+      lowerCaseString = "";
+      assertEquals(lowerCaseString.toUpperCase(), clip1.getUpperCase(lowerCaseString)); 
+
+    }
     
     
     
